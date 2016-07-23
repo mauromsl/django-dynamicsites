@@ -76,7 +76,7 @@ class SubdomainListField(models.TextField):
     def get_db_prep_value(self, value, connection=None, prepared=False):
         if not value: return ""
         assert(isinstance(value, list) or isinstance(value, tuple))
-        return u','.join(s for s in value])
+        return u','.join([s for s in value])
 
     def value_to_string(self, obj):
         print('value to string()')
