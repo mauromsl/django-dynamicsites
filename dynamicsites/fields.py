@@ -9,7 +9,6 @@ import logging
 class SubdomainListFormField(forms.Field):
 
     def __init__(self, *args, **kwargs):
-        kwargs.pop('max_length')
         kwargs['widget'] = SubdomainTextarea()
         self.logger = logging.getLogger(__name__)
         super(SubdomainListFormField, self).__init__(*args, **kwargs)
