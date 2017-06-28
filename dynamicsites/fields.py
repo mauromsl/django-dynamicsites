@@ -56,7 +56,6 @@ class SubdomainListFormField(forms.Field):
                 u(test_host)
 
 class SubdomainListField(models.TextField):
-    __metaclass__ = models.SubfieldBase
 
     def __init__(self, *args, **kwargs):
         kwargs['help_text'] = "Comma separated list of subdomains this site supports.  Leave blank to support all subdomains"
@@ -114,7 +113,6 @@ class FolderNameFormField(forms.CharField):
             raise ValidationError('The folder sites/%s/ does not exist or is missing the __init__.py file' % value)
 
 class FolderNameField(models.CharField):
-    __metaclass__ = models.SubfieldBase
 
     def __init__(self, *args, **kwargs):
         kwargs['help_text'] = "Folder name for this site's files.  The name may only consist of lowercase characters, numbers (0-9), and/or underscores"
